@@ -8,7 +8,7 @@ class ButtonShouter {
 	}
 
 	// () => void
-	// Type of a function with no argument wich return void
+	// Type of a function with no argument which return void
 	firstClick: () => void = () => {
 		this.$el.html(this.firstmessage);
 	}
