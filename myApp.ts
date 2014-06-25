@@ -1,15 +1,29 @@
 /// <reference path="jquery.d.ts" />
 
-class Greeter {
-	constructor(public greeting: string) { }
-	greet() {
-		return '<h1>' + this.greeting + '</h1>';
+class ButtonShouter {
+	constructor(
+		private firstmessage: string,
+		private secondmessage: string,
+		private $el) {
+	}
+
+	// () => void
+	// Type of a function with no argument wich return void
+	firstClick: () => void = () => {
+		this.$el.html(this.firstmessage);
+	}
+
+	secondClick: () => void = () => {
+		this.$el.html(this.secondmessage);
 	}
 }
 
-var greeter = new Greeter('Hello');
-var html = greeter.greet();
-
 $(document).ready(function() {
-	document.body.innerHTML = html;
+	var shouter = new ButtonShouter(
+		'Hello from 1', 
+		'Hello from 2', 
+		$('.my-div'));
+
+	$('.first-button').click(shouter.firstClick);
+	$('.second-button').click(shouter.secondClick);
 });
