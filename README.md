@@ -1,0 +1,4 @@
+funwithts
+=========
+
+Fun with typescript
