@@ -1,0 +1,17 @@
+/// <reference path="jquery.d.ts" />
+var Greeter = (function () {
+    function Greeter(greeting) {
+        this.greeting = greeting;
+    }
+    Greeter.prototype.greet = function () {
+        return '<h1>' + this.greeting + '</h1>';
+    };
+    return Greeter;
+})();
+
+var greeter = new Greeter('Hello');
+var html = greeter.greet();
+
+$(document).ready(function () {
+    document.body.innerHTML = html;
+});
